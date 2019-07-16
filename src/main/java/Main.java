@@ -10,5 +10,13 @@ public class Main {
 
         Calculator contextBean = applicationContext.getBean(Calculator.class);
         contextBean.summ(4,5);
+        //PROXY EXAMPLE
+        System.out.println(applicationContext.getBean("calculator").getClass());
+        System.out.println(Calculator.class.getClass());
+
+        Calculator calculator = new Calculator();
+
+        System.out.println(calculator.getClass().toString().equals(applicationContext.getBean("calculator").getClass().toString()));
+
     }
 }
